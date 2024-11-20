@@ -1,0 +1,132 @@
+import { useNavigate } from 'react-router-dom';  // For Hero.jsx
+import { useLocation, useState } from 'react-router-dom';  // For Menu.jsx
+
+.menu-container {
+  padding: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.menu-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--gray);
+  font-size: 2.5rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.product-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: white;
+  padding-bottom: 1rem;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  position: relative;
+  height: 250px;
+  background: #f8f8f8;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.product-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--red);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.product-card h3 {
+  padding: 1rem 1rem 0.5rem;
+  color: var(--gray);
+}
+
+.product-card p {
+  padding: 0 1rem;
+  color: #666;
+  font-size: 0.9rem;
+  min-height: 40px;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.add-to-cart {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.category-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: transparent;
+  color: var(--gray);
+  border: 1px solid var(--gray);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn.active {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+}
+
+.category-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
